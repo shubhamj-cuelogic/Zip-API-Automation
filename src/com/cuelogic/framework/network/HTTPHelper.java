@@ -19,7 +19,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 public class HTTPHelper {
 
-    private String getAllDataFromInputStream(InputStream inputStream) throws IOException {
+	private String getAllDataFromInputStream(InputStream inputStream) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
         String data = new String();
         String buffer;
@@ -52,7 +52,7 @@ public class HTTPHelper {
 
         HttpPost postRequest = new HttpPost(request.url);
         postRequest.setEntity(input);
-        postRequest.addHeader(request.authorization.get(0), request.authorization.get(1));
+        //postRequest.addHeader(request.authorization.get(0), request.authorization.get(1));
         HttpResponse response = httpClient.execute(postRequest);
 
         return convertAndSendResponse(response);
